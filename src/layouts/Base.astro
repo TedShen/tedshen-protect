@@ -52,6 +52,9 @@ const breadcrumbLd =
         })),
       }
     : null;
+// 審閱模式：見 astro.config.mjs
+const PREVIEW = process.env.PROTECT_PREVIEW === '1';
+
 const schemas = [
   ...(Array.isArray(schema) ? schema : schema ? [schema] : []),
   ...(breadcrumbLd ? [breadcrumbLd] : []),
@@ -67,6 +70,7 @@ const schemas = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {PREVIEW && <meta name="robots" content="noindex, nofollow" />}
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- Open Graph：分享到 LINE / FB 時的預覽 -->
@@ -237,6 +241,11 @@ const schemas = [
     </style>
   </head>
   <body>
+    {PREVIEW && (
+      <div style="background:#b45309;color:#fff;text-align:center;padding:10px 16px;font-size:.9rem;font-weight:600;">
+        審閱用預覽版・尚未公開・登錄資料為佔位符，正式上線前會換成公司提供的內容
+      </div>
+    )}
     <slot />
 
     <footer class="wrap">

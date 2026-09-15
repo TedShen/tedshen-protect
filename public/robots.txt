@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://protect.tedshen.link/sitemap-index.xml

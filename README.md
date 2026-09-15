@@ -2,7 +2,9 @@
 
 沈裕德 Ted 的保險服務站。以「登錄保險業務員」身分的正式管道，和 grow 的個人學習筆記分開。
 
-狀態：**未公開**。repo 私有、Pages 未啟用、DNS 未接、未列在 tedshen.link 身分頁。
+狀態：**審閱模式**。網址 <https://protect.tedshen.link> 只給拿到連結的人看：全站 noindex、robots 全擋、不產 sitemap、頂端有橫幅、登錄資料是佔位符。未列在 tedshen.link 身分頁，grow 也不連過來。
+
+審閱模式的開關在 `.github/workflows/deploy.yml` 的 `PROTECT_PREVIEW`。正式上線時刪掉那兩行。
 
 ## 三站的關係
 
@@ -19,10 +21,8 @@
 1. **問公司**：業務員個人網站的規定、是否需要送審。拿到：登錄公司全名、登錄字號、規定的聲明文字、審核編號（若有）。
 2. 填 `src/consts.ts` 的 `DISCLOSURE`。只要還有「待補」字樣，`npm run build` 會直接失敗，這是故意的。
 3. 把範例草稿 `src/content/posts/policy-review-what-to-look-at.md` 改成自己的內容，或刪掉。
-4. repo 轉公開，啟用 GitHub Pages（Source：GitHub Actions），自訂網域填 `protect.tedshen.link`。
-5. Cloudflare DNS 加 CNAME：`protect` → `tedshen.github.io`，Proxy 關閉（灰色雲朵）。
-6. 憑證簽好後在 Pages 設定開 Enforce HTTPS。
-7. 回 `tedshen-hub` 把保險線加進身分頁，並在 grow 的 `PERSON.sameAs` 加上這站。
+4. 刪掉 `.github/workflows/deploy.yml` 裡的 `PROTECT_PREVIEW` 兩行，push。
+5. 回 `tedshen-hub` 把保險線加進身分頁，並在 grow 的 `PERSON.sameAs` 加上這站。
 
 ## 本機預覽
 
