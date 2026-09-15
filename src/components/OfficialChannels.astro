@@ -10,18 +10,18 @@ const host = (u: string) => u.replace('https://', '');
   <h2>我的官方管道</h2>
 
   <p class="channels-intro">
-    假冒保險業務員的詐騙不少。以下是我唯一在使用的管道，
-    如果你在其他地方看到我的名字或照片，請先對照這裡，或直接向登錄公司查證。
+    假冒保險業務員的詐騙不少。以下是我在保險這條線唯一使用的帳號，
+    其他線的帳號和完整總表在 <a href={HUB_URL} style="color:var(--brand);">tedshen.link</a>。
+    如果你在其他地方看到我的名字或照片，請先對照，或直接向登錄公司查證。
   </p>
 
   <ul class="channel-list">
-    <li><span>身分頁</span><a href={HUB_URL}>{host(HUB_URL)}</a></li>
-    <li><span>保險服務</span><a href={SITE_URL}>{host(SITE_URL)}</a></li>
-    <li><span>財務教練</span><a href={GROW_URL}>{host(GROW_URL)}</a></li>
-    <li><span>Threads</span><a href={THREADS_URL} rel="me">@tedshen.grow</a></li>
-    <li><span>Instagram</span><a href={INSTAGRAM_URL} rel="me">@tedshen.grow</a></li>
+    <li><span>網站</span><a href={SITE_URL}>{host(SITE_URL)}</a></li>
+    <li><span>Threads</span><a href={THREADS_URL} rel="me">@tedshen.protect</a></li>
+    <li><span>Instagram</span><a href={INSTAGRAM_URL} rel="me">@tedshen.protect</a></li>
     <li><span>LINE 官方帳號</span><a href={LINE_URL}>加入好友</a></li>
     <li><span>Email</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+    <li><span>官方帳號總表</span><a href={HUB_URL}>{host(HUB_URL)}</a></li>
   </ul>
 
   <div class="never-box">

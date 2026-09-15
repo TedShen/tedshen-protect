@@ -13,9 +13,10 @@ export const HUB_URL = 'https://tedshen.link';
 export const GROW_URL = 'https://grow.tedshen.link';
 
 // 官方聯絡管道（和 hub、grow 共用同一份值）
-export const LINE_URL = 'https://lin.ee/TWsPv3R';
-export const THREADS_URL = 'https://www.threads.com/@tedshen.grow';
-export const INSTAGRAM_URL = 'https://www.instagram.com/tedshen.grow';
+// 保險線專用的一組帳號（財務教練那組是 @tedshen.grow，不要混用）
+export const LINE_URL = 'https://lin.ee/SIX75CN';
+export const THREADS_URL = 'https://www.threads.com/@tedshen.protect';
+export const INSTAGRAM_URL = 'https://www.instagram.com/tedshen.protect';
 export const EMAIL = 'ted@tedshen.link';
 
 // 站主
