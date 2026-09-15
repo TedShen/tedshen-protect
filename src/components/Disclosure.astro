@@ -9,7 +9,8 @@ import { DISCLOSURE, PERSON } from '../consts';
     <p style="color:var(--text); font-weight:600; margin-bottom:6px;">業務員登錄資料</p>
     <p>姓名：{PERSON.name}</p>
     <p>登錄公司：{DISCLOSURE.companyName}</p>
-    <p>登錄字號：{DISCLOSURE.registrationNo}</p>
+    {DISCLOSURE.registrationNo && <p>登錄字號：{DISCLOSURE.registrationNo}</p>}
+    <p>查證：業務員登錄資料可向登錄公司查詢。</p>
     {DISCLOSURE.reviewNo && <p>審核編號：{DISCLOSURE.reviewNo}</p>}
     <p style="margin-top:10px;">{DISCLOSURE.statement}</p>
   </div>

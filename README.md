@@ -2,9 +2,9 @@
 
 沈裕德 Ted 的保險服務站。以「登錄保險業務員」身分的正式管道，和 grow 的個人學習筆記分開。
 
-狀態：**審閱模式**。網址 <https://protect.tedshen.link> 只給拿到連結的人看：全站 noindex、robots 全擋、不產 sitemap、頂端有橫幅、登錄資料是佔位符。未列在 tedshen.link 身分頁，grow 也不連過來。
+狀態：**正式上線**（2026-09-15）。公司確認不放 logo 就不需送審。登錄字號目前選擇不公開，`DISCLOSURE.registrationNo` 留空即可。
 
-審閱模式的開關在 `.github/workflows/deploy.yml` 的 `PROTECT_PREVIEW`。正式上線時刪掉那兩行。
+需要暫時下架成審閱版時，在 `.github/workflows/deploy.yml` 的 build 步驟加回 `env: PROTECT_PREVIEW: '1'`：全站 noindex、robots 全擋、不產 sitemap、頂端有橫幅。
 
 ## 三站的關係
 
@@ -16,13 +16,10 @@
 
 連結方向只有一個：protect → grow Notes。grow Notes 永遠不連回 protect，否則 Notes 的「非招攬」立場就破了。
 
-## 上線前檢查清單
+## 待辦
 
-1. **問公司**：業務員個人網站的規定、是否需要送審。拿到：登錄公司全名、登錄字號、規定的聲明文字、審核編號（若有）。
-2. 填 `src/consts.ts` 的 `DISCLOSURE`。只要還有「待補」字樣，`npm run build` 會直接失敗，這是故意的。
-3. 把範例草稿 `src/content/posts/policy-review-what-to-look-at.md` 改成自己的內容，或刪掉。
-4. 刪掉 `.github/workflows/deploy.yml` 裡的 `PROTECT_PREVIEW` 兩行，push。
-5. 回 `tedshen-hub` 把保險線加進身分頁，並在 grow 的 `PERSON.sameAs` 加上這站。
+- 範例草稿 `src/content/posts/policy-review-what-to-look-at.md` 是 draft，不會 build。改成自己的內容再發布，或刪掉。
+- `src/consts.ts` 的 `DISCLOSURE` 只要出現「待補」字樣，build 會直接失敗，這是故意的防呆。
 
 ## 本機預覽
 

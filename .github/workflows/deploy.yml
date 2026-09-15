@@ -23,9 +23,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Astro site
         uses: withastro/action@v3
-        env:
-          # 審閱模式：noindex、無 sitemap、允許佔位符。正式上線時刪掉這兩行。
-          PROTECT_PREVIEW: '1'
         with:
           node-version: 22
 
