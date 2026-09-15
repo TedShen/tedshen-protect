@@ -33,6 +33,8 @@ export const PERSON = {
 export const DISCLOSURE = {
   companyName: '正遠保險經紀人股份有限公司',
   registrationNo: '', // 選填，目前不公開
+  // 已取得的登錄資格
+  qualifications: ['人身保險', '財產保險', '投資型保險商品', '外幣收付非投資型保險商品'],
   statement: '本網站由沈裕德個人製作與維護，內容為保險觀念說明與服務介紹，非公司官方網站。保險商品內容以各保險公司保單條款為準。',
   reviewNo: '', // 若公司有審核編號，填這裡；沒有就留空
 };
