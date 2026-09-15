@@ -1,0 +1,16 @@
+---
+// 法定揭露區塊。每一頁都放，位置在頁尾 CTA 之後、footer 之前。
+// 文字內容全部來自 consts.ts 的 DISCLOSURE，這裡不寫死任何一個字。
+import { DISCLOSURE, PERSON } from '../consts';
+---
+
+<section class="wrap" aria-label="法定揭露">
+  <div class="compliance-note" style="font-size:.85rem; line-height:1.8;">
+    <p style="color:var(--text); font-weight:600; margin-bottom:6px;">業務員登錄資料</p>
+    <p>姓名：{PERSON.name}</p>
+    <p>登錄公司：{DISCLOSURE.companyName}</p>
+    <p>登錄字號：{DISCLOSURE.registrationNo}</p>
+    {DISCLOSURE.reviewNo && <p>審核編號：{DISCLOSURE.reviewNo}</p>}
+    <p style="margin-top:10px;">{DISCLOSURE.statement}</p>
+  </div>
+</section>

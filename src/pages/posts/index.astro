@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Disclosure from '../../components/Disclosure.astro';
+
+const posts = (await getCollection('posts'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base
+  title="文章 ｜ Ted 保險服務"
+  description="寫給正在整理保單的你：怎麼看缺口、怎麼比較、怎麼決定。"
+  path="/posts/"
+  breadcrumbs={[{ name: '文章', path: '/posts/' }]}
+>
+  <section class="wrap" style="padding-top:80px;">
+    <p class="zone-label">文章</p>
+    <h1>寫給正在整理保單的你</h1>
+    <div class="posts" style="margin-top:32px;">
+      {posts.length === 0 ? (
+        <p>文章即將發布。</p>
+      ) : (
+        posts.map((p) => (
+          <a href={`/posts/${p.id}/`}>
+            <div>{p.data.title}</div>
+            <div class="date">{fmt(p.data.pubDate)}</div>
+          </a>
+        ))
+      )}
+    </div>
+    <p style="margin-top:32px;"><a class="back-link" href="/">← 回首頁</a></p>
+  </section>
+
+  <Disclosure />
+</Base>

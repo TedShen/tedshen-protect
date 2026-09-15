@@ -1,0 +1,63 @@
+---
+// 官方管道與防冒用聲明（保險站版）。
+// 內容和 hub、grow 一致，只差網站列多了這一站。
+import { LINE_URL, THREADS_URL, INSTAGRAM_URL, EMAIL, SITE_URL, HUB_URL, GROW_URL } from '../consts';
+const host = (u: string) => u.replace('https://', '');
+---
+
+<section class="wrap channels">
+  <p class="zone-label">防範冒用</p>
+  <h2>我的官方管道</h2>
+
+  <p class="channels-intro">
+    假冒保險業務員的詐騙不少。以下是我唯一在使用的管道，
+    如果你在其他地方看到我的名字或照片，請先對照這裡，或直接向登錄公司查證。
+  </p>
+
+  <ul class="channel-list">
+    <li><span>身分頁</span><a href={HUB_URL}>{host(HUB_URL)}</a></li>
+    <li><span>保險服務</span><a href={SITE_URL}>{host(SITE_URL)}</a></li>
+    <li><span>財務教練</span><a href={GROW_URL}>{host(GROW_URL)}</a></li>
+    <li><span>Threads</span><a href={THREADS_URL} rel="me">@tedshen.grow</a></li>
+    <li><span>Instagram</span><a href={INSTAGRAM_URL} rel="me">@tedshen.grow</a></li>
+    <li><span>LINE 官方帳號</span><a href={LINE_URL}>加入好友</a></li>
+    <li><span>Email</span><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+  </ul>
+
+  <div class="never-box">
+    <h3>我不會做的事</h3>
+    <ul>
+      <li>不會主動私訊陌生人談保險或投資</li>
+      <li>不會用個人 LINE 或其他帳號聯絡你</li>
+      <li>不會要求你把保費匯到個人帳戶</li>
+      <li>不會保證任何投資報酬或保單收益</li>
+      <li>不會用「限時」「名額有限」催促你做決定</li>
+    </ul>
+    <p class="never-note">
+      如果有人用我的名字或照片做上述任何一件事，那不是我。
+      歡迎直接用上面的管道向我確認，或向登錄公司查證。
+    </p>
+  </div>
+</section>
+
+<style>
+  .channels-intro { margin-bottom: 24px; }
+  .channel-list { list-style: none; display: grid; gap: 10px; margin-bottom: 32px; }
+  .channel-list li {
+    display: flex; align-items: baseline; gap: 12px; padding: 12px 18px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    font-size: .96rem; flex-wrap: wrap;
+  }
+  .channel-list span { color: var(--muted); font-size: .85rem; min-width: 104px; }
+  .channel-list a { color: var(--brand); text-decoration: none; font-weight: 600; word-break: break-all; }
+  .channel-list a:hover { text-decoration: underline; }
+  .never-box {
+    background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--brand);
+    border-radius: 12px; padding: 24px;
+  }
+  .never-box h3 { font-size: 1.05rem; margin-bottom: 14px; }
+  .never-box ul { list-style: none; display: grid; gap: 8px; margin-bottom: 18px; }
+  .never-box li { color: var(--muted); font-size: .95rem; padding-left: 22px; position: relative; }
+  .never-box li::before { content: "×"; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+  .never-note { font-size: .95rem; color: var(--text); font-weight: 600; line-height: 1.7; }
+</style>

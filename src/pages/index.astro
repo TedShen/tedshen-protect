@@ -1,0 +1,106 @@
+---
+// protect.tedshen.link 首頁：以登錄業務員身分的正式頁面。
+// 結構：我怎麼看保險 → 能幫什麼 → 文章 → 延伸閱讀（連 grow Notes，單向）→ CTA → 揭露 → 官方管道
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Disclosure from '../components/Disclosure.astro';
+import OfficialChannels from '../components/OfficialChannels.astro';
+import { SITE_DESCRIPTION, LINE_URL, EMAIL, HUB_URL, NOTES_LINKS, PERSON } from '../consts';
+
+const posts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
+const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base
+  title="Ted ｜ 保險服務 — 先看缺口，再談保障"
+  description={SITE_DESCRIPTION}
+  ogTitle="Ted ｜ 保險服務"
+  ogDescription="先看缺口、再談保障，不多買、不亂買。"
+  path="/"
+>
+  <!-- ① Hero -->
+  <header class="hero wrap">
+    <img class="avatar" src="/avatar.jpg" alt={`${PERSON.name} ${PERSON.alternateName}`} width="96" height="96" />
+    <p class="brand-tag">PROTECT ｜ 保險服務</p>
+    <h1>先看缺口<br />再談保障</h1>
+    <p class="lead">
+      我是沈裕德 Ted，登錄保險業務員。<br />
+      不多買、不亂買，先檢視你現有的保障，找出真正的缺口，再依需求補足。
+    </p>
+    <a class="btn btn-line" href={LINE_URL}>加 LINE，聊聊你的保障狀況 →</a>
+  </header>
+
+  <!-- ② 我怎麼做 -->
+  <section class="wrap">
+    <p class="zone-label">我怎麼做</p>
+    <h2>三步，每一步都可以停</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>先看你現在有什麼</h3>
+        <p>把手上的保單攤開，整理成一張看得懂的表：保什麼、保多少、保到幾歲、一年多少錢。很多人做到這步就發現問題了。</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>找缺口，不是找商品</h3>
+        <p>對照你的家庭狀況、收入和負債，看哪裡真的沒接住。缺口不存在的話，我會直接說不用買。</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>要補再補，補多少你決定</h3>
+        <p>有缺口才進到商品討論。我會講清楚每個選項的取捨和費用，決定權在你，不催、不設期限。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ③ 文章 -->
+  {posts.length > 0 && (
+    <section class="wrap posts">
+      <p class="zone-label">文章</p>
+      <h2>寫給正在整理保單的你</h2>
+      {posts.map((p) => (
+        <a href={`/posts/${p.id}/`}>
+          <div>{p.data.title}</div>
+          <div class="date">{fmt(p.data.pubDate)}</div>
+        </a>
+      ))}
+    </section>
+  )}
+
+  <!-- ④ 延伸閱讀：單向連到 grow Notes -->
+  {NOTES_LINKS.length > 0 && (
+    <section class="wrap">
+      <p class="zone-label">延伸閱讀</p>
+      <h2>我的學習筆記</h2>
+      <p class="zone-intro">
+        這些是我在另一個網站上的個人學習紀錄，純觀念討論、不涉及商品。想先建立觀念可以從這裡開始。
+      </p>
+      <ul class="pill-list">
+        {NOTES_LINKS.map((n) => (
+          <li><a href={n.url} style="color:var(--brand);text-decoration:none;">{n.title} →</a></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <!-- ⑤ CTA -->
+  <section class="wrap">
+    <div class="cta">
+      <h2>想先把保單看清楚？</h2>
+      <p>第一次整理不收費，也不需要決定任何事。<br />把保單拍照傳給我，我先幫你排成一張表。</p>
+      <a class="btn btn-line" href={LINE_URL}>加 LINE 預約整理</a>
+      <p style="margin-top:16px;font-size:.9rem;">
+        或寫信：<a href={`mailto:${EMAIL}`} style="color:var(--brand);">{EMAIL}</a>
+        ・ 確認身分：<a href={HUB_URL} style="color:var(--muted);">tedshen.link</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ⑥ 法定揭露 -->
+  <Disclosure />
+
+  <!-- ⑦ 官方管道與防冒用 -->
+  <OfficialChannels />
+</Base>
