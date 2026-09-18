@@ -112,7 +112,7 @@ src/
 
 ## 6. 待辦
 
-- [ ] 範例草稿 `src/content/posts/policy-review-what-to-look-at.md` 還是 `draft: true`：改寫成自己的內容再發布，或刪掉。
+- [x] 範例草稿已刪除，首篇正式文章「什麼是對的保險？」已發布（2026-09-18）。
 - [ ] （以下由作業者增刪，完成就打勾並移到作業紀錄）
 
 ---
@@ -129,6 +129,7 @@ src/
 | 2026-09-18 | 新增本維護手冊，規定未來任何作業都要更新紀錄 | `MAINTAIN.md` | 已完成 |
 | 2026-09-18 | SEO 稽核 warnings 全修：描述擴寫（65/40/60/61 字）、新增 404、修 Base 失效註解＋補 Person/BlogPosting schema、內文連結改 brand-dark（過 AA）；build＋線上驗證 robots/sitemap 正常 | `src/consts.ts`、`src/pages/index.astro`、`src/pages/posts/index.astro`、`src/pages/404.astro`（新增）、`src/pages/posts/[slug].astro`、`src/layouts/Base.astro`、`src/components/OfficialChannels.astro`、草稿 md | 已 push（`d7d3451`）|
 | 2026-09-18 | SEO 稽核 opportunities 全修：文章 image frontmatter 管線（自訂 1200×630 首圖）、avatar-192 縮圖（100KB→6KB）、RSS feed＋head alternate、public/llms.txt；BlogPosting/Person 上次已補 | `src/content.config.ts`、`src/pages/posts/[slug].astro`、`src/pages/index.astro`、`public/avatar-192.jpg`（新增）、`src/pages/rss.xml.ts`（新增）、`src/layouts/Base.astro`、`public/llms.txt`（新增）、`package.json`（＋@astrojs/rss） | 已 push（`d7d3451`）|
+| 2026-09-18 | 「什麼是對的保險？」定稿發布（draft:false），刪除範例草稿，待辦結案 | `src/content/posts/what-is-right-insurance.md`（新增）、範例草稿（刪除） | 未 push |
 | <!-- 之後新增列請插在這一行之上 --> | | | |
 
 **紀錄格式**：`| YYYY-MM-DD | 做了什麼（一句話） | 改了哪些檔案 | 狀態 |`。commit hash 有的話附上。
