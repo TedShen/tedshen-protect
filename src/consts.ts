@@ -6,7 +6,7 @@
 export const SITE_NAME = 'Ted ｜ 保險服務';
 export const SITE_URL = 'https://protect.tedshen.link';
 export const SITE_DESCRIPTION =
-  '沈裕德 Ted 的保險服務頁。先看缺口、再談保障，不多買、不亂買。登錄資料與正式聯絡管道都在這裡。';
+  '沈裕德 Ted 的保險服務頁，登錄保險業務員。先做保單健檢、找出保障缺口再談規劃，不多買、不亂買。登錄資料與正式聯絡管道都在這裡。';
 
 // 其他站
 export const HUB_URL = 'https://tedshen.link';

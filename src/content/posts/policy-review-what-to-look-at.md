@@ -1,6 +1,6 @@
 ---
 title: 整理保單時，先看這四個欄位
-description: 把手上的保單攤開，只要先抓四個欄位，就能看出大部分的問題在哪裡。這是我幫客戶做第一次整理時的固定順序。
+description: 把手上的保單攤開，先抓保什麼、保多少、保到幾歲、一年多少錢四個欄位，就能看出大部分的保障缺口。這是我做保單健檢的固定順序。
 pubDate: 2026-09-15
 tags: ['保單整理']
 relatedNote: https://grow.tedshen.link/notes/insurance-learning-note/

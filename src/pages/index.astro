@@ -5,24 +5,37 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Disclosure from '../components/Disclosure.astro';
 import OfficialChannels from '../components/OfficialChannels.astro';
-import { SITE_DESCRIPTION, LINE_URL, EMAIL, HUB_URL, NOTES_LINKS, PERSON } from '../consts';
+import { SITE_DESCRIPTION, SITE_URL, LINE_URL, EMAIL, HUB_URL, NOTES_LINKS, PERSON, DISCLOSURE } from '../consts';
 
 const posts = (await getCollection('posts', ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 5);
 const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// 首頁 Person 結構化資料：登錄業務員身分與登錄公司
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: PERSON.name,
+  alternateName: PERSON.alternateName,
+  jobTitle: PERSON.jobTitle,
+  image: new URL(PERSON.image, SITE_URL).href,
+  url: SITE_URL,
+  worksFor: { '@type': 'Organization', name: DISCLOSURE.companyName },
+};
 ---
 
 <Base
   title="Ted ｜ 保險服務 — 先看缺口，再談保障"
   description={SITE_DESCRIPTION}
   ogTitle="Ted ｜ 保險服務"
-  ogDescription="先看缺口、再談保障，不多買、不亂買。"
+  ogDescription="先看缺口再談保障：先做保單健檢，找出真正的保障缺口，有缺口才補，不多買、不亂買。"
   path="/"
+  schema={personSchema}
 >
   <!-- ① Hero -->
   <header class="hero wrap">
-    <img class="avatar" src="/avatar.jpg" alt={`${PERSON.name} ${PERSON.alternateName}`} width="96" height="96" />
+    <img class="avatar" src="/avatar-192.jpg" alt={`${PERSON.name} ${PERSON.alternateName}`} width="96" height="96" />
     <p class="brand-tag">PROTECT ｜ 保險服務</p>
     <h1>先看缺口<br />再談保障</h1>
     <p class="lead">
@@ -79,7 +92,7 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', month:
       </p>
       <ul class="pill-list">
         {NOTES_LINKS.map((n) => (
-          <li><a href={n.url} style="color:var(--brand);text-decoration:none;">{n.title} →</a></li>
+          <li><a href={n.url} style="color:var(--brand-dark);text-decoration:none;">{n.title} →</a></li>
         ))}
       </ul>
     </section>
@@ -92,7 +105,7 @@ const fmt = (d: Date) => d.toLocaleDateString('zh-TW', { year: 'numeric', month:
       <p>第一次整理不收費，也不需要決定任何事。<br />把保單拍照傳給我，我先幫你排成一張表。</p>
       <a class="btn btn-line" href={LINE_URL}>加 LINE 預約整理</a>
       <p style="margin-top:16px;font-size:.9rem;">
-        或寫信：<a href={`mailto:${EMAIL}`} style="color:var(--brand);">{EMAIL}</a>
+        或寫信：<a href={`mailto:${EMAIL}`} style="color:var(--brand-dark);">{EMAIL}</a>
         ・ 確認身分：<a href={HUB_URL} style="color:var(--muted);">tedshen.link</a>
       </p>
     </div>

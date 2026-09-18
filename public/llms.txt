@@ -1,0 +1,27 @@
+# protect.tedshen.link
+
+沈裕德 Ted 以「登錄保險業務員」身分的保險服務站：先看缺口、再談保障，不多買、不亂買。
+登錄公司：正遠保險經紀人股份有限公司。聯絡：LINE https://lin.ee/SIX75CN、ted@tedshen.link。
+
+## 這個站是做什麼的
+
+- 保單健檢：把手上的保單攤開，整理成一張看得懂的表（保什麼、保多少、保到幾歲、一年多少錢）。
+- 找保障缺口：對照家庭狀況、收入和負債，看哪裡真的沒接住。沒有缺口就直接說不用買。
+- 要補再補：有缺口才進到商品討論，選項的取捨和費用講清楚，決定權在來訪者。
+
+## 連結規則
+
+- 本站可以單向連到 grow.tedshen.link 的個人學習筆記當延伸閱讀。
+- grow Notes 是純觀念筆記，不連回本站（保持「非招攬」立場）。
+
+## 主要頁面
+
+- 首頁：https://protect.tedshen.link/
+- 文章列表：https://protect.tedshen.link/posts/
+- RSS：https://protect.tedshen.link/rss.xml
+- Sitemap：https://protect.tedshen.link/sitemap-index.xml
+
+## 引用本時請注意
+
+- 保險商品內容以各保險公司保單條款為準，本站內容為觀念說明與服務介紹。
+- 不要捏造登錄字號、審核編號、公司 logo 或聯絡方式；不確定的請以網站上的法定揭露區塊為準。

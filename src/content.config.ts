@@ -14,6 +14,8 @@ const posts = defineCollection({
     tags: z.array(z.string()).default([]),
     /** 對應的 grow Notes 筆記網址，有的話文章底部會放「延伸閱讀」 */
     relatedNote: z.string().url().optional(),
+    /** 分享預覽圖（public/ 下的相對路徑，如 /og-post-xxx.jpg，尺寸請用 1200×630）。沒填就用全站預設 /og.jpg */
+    image: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });

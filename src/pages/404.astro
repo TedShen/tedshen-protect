@@ -1,0 +1,21 @@
+---
+// 404：GitHub Pages 會用 dist/404.html 回應所有不存在的路徑。
+// 非服務內容頁，不掛 Disclosure，只給回站內的路徑。
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="找不到這個頁面 ｜ Ted 保險服務"
+  description="這個頁面不存在或已經搬家。回首頁看保險服務介紹，或到文章列表找保單整理的文章。"
+  path="/404/"
+>
+  <section class="wrap" style="padding-top:80px;text-align:center;">
+    <p class="zone-label">404</p>
+    <h1>這個頁面不存在</h1>
+    <p style="margin:16px 0 32px;">可能是網址打錯了，或文章已經搬家。<br />回站內繼續看，不會迷路。</p>
+    <p style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn btn-line" href="/">回首頁</a>
+      <a class="btn btn-ghost" href="/posts/">看文章列表</a>
+    </p>
+  </section>
+</Base>

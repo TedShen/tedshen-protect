@@ -11,7 +11,7 @@ const host = (u: string) => u.replace('https://', '');
 
   <p class="channels-intro">
     假冒保險業務員的詐騙不少。以下是我在保險這條線唯一使用的帳號，
-    其他線的帳號和完整總表在 <a href={HUB_URL} style="color:var(--brand);">tedshen.link</a>。
+    其他線的帳號和完整總表在 <a href={HUB_URL} style="color:var(--brand-dark);">tedshen.link</a>。
     如果你在其他地方看到我的名字或照片，請先對照，或直接向登錄公司查證。
   </p>
 
@@ -49,7 +49,7 @@ const host = (u: string) => u.replace('https://', '');
     font-size: .96rem; flex-wrap: wrap;
   }
   .channel-list span { color: var(--muted); font-size: .85rem; min-width: 104px; }
-  .channel-list a { color: var(--brand); text-decoration: none; font-weight: 600; word-break: break-all; }
+  .channel-list a { color: var(--brand-dark); text-decoration: none; font-weight: 600; word-break: break-all; }
   .channel-list a:hover { text-decoration: underline; }
   .never-box {
     background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--brand);
@@ -58,6 +58,6 @@ const host = (u: string) => u.replace('https://', '');
   .never-box h3 { font-size: 1.05rem; margin-bottom: 14px; }
   .never-box ul { list-style: none; display: grid; gap: 8px; margin-bottom: 18px; }
   .never-box li { color: var(--muted); font-size: .95rem; padding-left: 22px; position: relative; }
-  .never-box li::before { content: "×"; position: absolute; left: 0; color: var(--brand); font-weight: 700; }
+  .never-box li::before { content: "×"; position: absolute; left: 0; color: var(--brand-dark); font-weight: 700; }
   .never-note { font-size: .95rem; color: var(--text); font-weight: 600; line-height: 1.7; }
 </style>
