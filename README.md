@@ -18,7 +18,7 @@
 
 ## 待辦
 
-- 範例草稿 `src/content/posts/policy-review-what-to-look-at.md` 是 draft，不會 build。改成自己的內容再發布，或刪掉。
+- 目前已發布一篇：`what-is-right-insurance.md`。新增文章放 `src/content/posts/`，frontmatter 見 `src/content.config.ts`。
 - `src/consts.ts` 的 `DISCLOSURE` 只要出現「待補」字樣，build 會直接失敗，這是故意的防呆。
 
 ## 本機預覽
