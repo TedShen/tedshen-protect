@@ -113,7 +113,7 @@ src/
 ## 6. 待辦
 
 - [x] 範例草稿已刪除，首篇正式文章「什麼是對的保險？」已發布（2026-09-18）。
-- [ ] 〈食品業者一定要保產品責任險嗎？〉審稿 → 改 `draft: false` 發布（2026-10-06 草稿）
+- [x] 〈食品業者一定要保產品責任險嗎？〉已審稿發布（2026-10-06）。
 - [ ] （以下由作業者增刪，完成就打勾並移到作業紀錄）
 
 ---
@@ -132,6 +132,7 @@ src/
 | 2026-09-18 | SEO 稽核 opportunities 全修：文章 image frontmatter 管線（自訂 1200×630 首圖）、avatar-192 縮圖（100KB→6KB）、RSS feed＋head alternate、public/llms.txt；BlogPosting/Person 上次已補 | `src/content.config.ts`、`src/pages/posts/[slug].astro`、`src/pages/index.astro`、`public/avatar-192.jpg`（新增）、`src/pages/rss.xml.ts`（新增）、`src/layouts/Base.astro`、`public/llms.txt`（新增）、`package.json`（＋@astrojs/rss） | 已 push（`d7d3451`）|
 | 2026-09-18 | 「什麼是對的保險？」定稿發布（draft:false），刪除範例草稿，待辦結案 | `src/content/posts/what-is-right-insurance.md`（新增）、範例草稿（刪除） | 已 push（`4015768`）|
 | 2026-10-06 | 新增〈食品業者一定要保產品責任險嗎？〉草稿（draft: true），內容依食安法第 13、47 條及衛福部 110-09-28 公告（衛授食字第 1101302156 號）全文核對；本機 build 驗證通過 | `src/content/posts/food-product-liability-insurance.md`（新增） | 草稿，待 Ted 審稿後改 `draft: false` 發布 |
+| 2026-10-06 | 〈食品業者一定要保產品責任險嗎？〉Ted 審稿通過，改 draft: false 發布 | `src/content/posts/food-product-liability-insurance.md` | 已發布 |
 | <!-- 之後新增列請插在這一行之上 --> | | | |
 
 **紀錄格式**：`| YYYY-MM-DD | 做了什麼（一句話） | 改了哪些檔案 | 狀態 |`。commit hash 有的話附上。
