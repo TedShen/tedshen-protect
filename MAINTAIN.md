@@ -133,6 +133,7 @@ src/
 | 2026-09-18 | 「什麼是對的保險？」定稿發布（draft:false），刪除範例草稿，待辦結案 | `src/content/posts/what-is-right-insurance.md`（新增）、範例草稿（刪除） | 已 push（`4015768`）|
 | 2026-10-06 | 新增〈食品業者一定要保產品責任險嗎？〉草稿（draft: true），內容依食安法第 13、47 條及衛福部 110-09-28 公告（衛授食字第 1101302156 號）全文核對；本機 build 驗證通過 | `src/content/posts/food-product-liability-insurance.md`（新增） | 草稿，待 Ted 審稿後改 `draft: false` 發布 |
 | 2026-10-06 | 〈食品業者一定要保產品責任險嗎？〉Ted 審稿通過，改 draft: false 發布 | `src/content/posts/food-product-liability-insurance.md` | 已發布 |
+| 2026-11-02 | 〈食品業者一定要保產品責任險嗎？〉新增一節「來問我的業者，最常不清楚的兩件事」（身體傷害與財物損失分開計額、保費需核保報價），素材來自 Ted 的回答；加 updatedDate | `src/content/posts/food-product-liability-insurance.md` | 已發布 |
 | <!-- 之後新增列請插在這一行之上 --> | | | |
 
 **紀錄格式**：`| YYYY-MM-DD | 做了什麼（一句話） | 改了哪些檔案 | 狀態 |`。commit hash 有的話附上。
