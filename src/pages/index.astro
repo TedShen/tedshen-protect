@@ -80,6 +80,38 @@ const personSchema = {
     </header>
   </div>
 
+  <!-- ①-1 你是不是也遇到：痛點對應到內容 -->
+  <section class="pain">
+    <div class="wrap-wide">
+      <div class="center-head">
+        <p class="eyebrow">常見狀況</p>
+        <h2 class="h2-big">你是不是也遇到這些事？</h2>
+      </div>
+      <div class="grid-2">
+        <a class="pain-card" href="/posts/food-product-liability-insurance/">
+          <span class="pain-tag">企業主</span>
+          <h3>做食品、開餐廳，不確定自己是不是一定要保產品責任險</h3>
+          <span class="pain-go">看法規怎麼寫 →</span>
+        </a>
+        <a class="pain-card" href="#how">
+          <span class="pain-tag">保單整理</span>
+          <h3>保單一大疊，看不懂保什麼、保多少、保到幾歲</h3>
+          <span class="pain-go">看怎麼整理成一張表 →</span>
+        </a>
+        <a class="pain-card" href="/posts/what-is-right-insurance/">
+          <span class="pain-tag">保險觀念</span>
+          <h3>不知道自己現在這個階段，保險該怎麼想</h3>
+          <span class="pain-go">先看「對」的保險是什麼 →</span>
+        </a>
+        <a class="pain-card" href="#channels">
+          <span class="pain-tag">防範冒用</span>
+          <h3>收到自稱是我的訊息，不確定是不是本人</h3>
+          <span class="pain-go">對照我的官方管道 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ② 我怎麼做 -->
   <section id="how">
     <div class="wrap-wide">
@@ -114,7 +146,7 @@ const personSchema = {
         <div class="post-grid">
           {posts.map((p) => (
             <a class="post-card" href={`/posts/${p.id}/`}>
-              <span class="date">{fmt(p.data.pubDate)}</span>
+              <span class="date">{p.data.tags?.[0] ? `${p.data.tags[0]}・` : ''}{fmt(p.data.pubDate)}</span>
               <h3>{p.data.title}</h3>
               <span class="read">閱讀 →</span>
             </a>
@@ -179,6 +211,12 @@ const personSchema = {
   .table-card tr.gap td:first-child { font-weight: 700; }
   .table-note { font-size: .85rem; }
 
+  .pain { padding-top: 72px; padding-bottom: 24px; }
+  .pain-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--text); transition: transform .15s ease, box-shadow .15s ease; }
+  .pain-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .pain-card h3 { font-size: 1.1rem; line-height: 1.6; color: var(--brand-dark); }
+  .pain-tag { align-self: flex-start; font-size: .78rem; font-weight: 700; color: var(--accent); background: #fff4ed; border-radius: 999px; padding: 3px 10px; }
+  .pain-go { color: var(--brand); font-weight: 700; font-size: .9rem; margin-top: auto; }
   .center-head { text-align: center; margin-bottom: 40px; }
   .h2-big { font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 900; color: var(--brand-dark); line-height: 1.35; margin-bottom: 0; }
   .step { border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 12px; }
@@ -204,7 +242,8 @@ const personSchema = {
   .cta-navy a:not(.btn) { color: #fff; }
 
   @media (prefers-color-scheme: dark) {
-    .hero2 h1, .h2-big, .step h3, .top-brand, .table-head strong { color: var(--text); }
+    .hero2 h1, .h2-big, .step h3, .top-brand, .table-head strong, .pain-card h3 { color: var(--text); }
+    .pain-tag { background: #3a1d0f; color: #fdba74; }
     .table-card tr.gap { background: #3a1d0f; }
     .table-card tr.gap td { color: #fdba74; }
   }
