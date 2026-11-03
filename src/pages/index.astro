@@ -33,87 +33,184 @@ const personSchema = {
   path="/"
   schema={personSchema}
 >
-  <!-- ① Hero -->
-  <header class="hero wrap">
-    <img class="avatar" src="/avatar-192.jpg" alt={`${PERSON.name} ${PERSON.alternateName}`} width="96" height="96" />
-    <p class="brand-tag">PROTECT ｜ 保險服務</p>
-    <h1>先看缺口<br />再談保障</h1>
-    <p class="lead">
-      我是沈裕德 Ted，登錄保險業務員，具人身、財產、投資型與外幣保單資格。<br />
-      不多買、不亂買，先檢視你現有的保障，找出真正的缺口，再依需求補足。
-    </p>
-    <a class="btn btn-line" href={LINE_URL}>加 LINE，聊聊你的保障狀況 →</a>
-  </header>
+  <!-- ⓪ 資格列＋導覽 -->
+  <div class="qual-bar">
+    <div class="wrap-wide">具備人身・財產・投資型・外幣保單資格</div>
+  </div>
+  <nav class="top-nav wrap-wide" aria-label="主要導覽">
+    <a class="top-brand" href="/">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>
+      Ted ｜ 保險服務
+    </a>
+    <ul>
+      <li><a href="#how">服務流程</a></li>
+      <li><a href="/posts/">文章</a></li>
+      <li><a href={HUB_URL}>身分查證</a></li>
+      <li><a class="nav-line" href={LINE_URL}>免費整理保單</a></li>
+    </ul>
+  </nav>
+
+  <!-- ① Hero：左文右表 -->
+  <div class="hero-band">
+    <header class="hero2 wrap-wide">
+      <div class="hero2-text">
+        <p class="eyebrow">PROTECT ｜ 保險服務</p>
+        <h1>先看缺口<br />再談保障</h1>
+        <p class="hero2-lead">不多買、不亂買。先檢視你現有的保障，找出真正的缺口，再依需求補足。缺口不存在的話，我會直接說不用買。</p>
+        <div class="btn-row">
+          <a class="btn btn-line" href={LINE_URL}>加 LINE，免費整理保單 →</a>
+          <a class="btn btn-ghost" href="#how">看怎麼進行</a>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-head"><strong>保單整理表</strong><span>範例，非真實客戶</span></div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>保什麼</th><th>保多少</th><th>保到幾歲</th><th>一年多少</th></tr></thead>
+            <tbody>
+              <tr><td>壽險</td><td>[金額]</td><td>[年齡]</td><td>[保費]</td></tr>
+              <tr><td>醫療（實支實付）</td><td>[金額]</td><td>[年齡]</td><td>[保費]</td></tr>
+              <tr><td>意外</td><td>[金額]</td><td>[年齡]</td><td>[保費]</td></tr>
+              <tr class="gap"><td>失能</td><td colspan="3">沒有保障 → 這裡可能是缺口</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">把保單拍照傳來，第一次整理不收費，也不需要決定任何事。</p>
+      </div>
+    </header>
+  </div>
 
   <!-- ② 我怎麼做 -->
-  <section class="wrap">
-    <p class="zone-label">我怎麼做</p>
-    <h2>三步，每一步都可以停</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="num">01</div>
-        <h3>先看你現在有什麼</h3>
-        <p>把手上的保單攤開，整理成一張看得懂的表：保什麼、保多少、保到幾歲、一年多少錢。很多人做到這步就發現問題了。</p>
+  <section id="how">
+    <div class="wrap-wide">
+      <div class="center-head">
+        <p class="eyebrow">我怎麼做</p>
+        <h2 class="h2-big">三步，每一步都可以停</h2>
       </div>
-      <div class="card">
-        <div class="num">02</div>
-        <h3>找缺口，不是找商品</h3>
-        <p>對照你的家庭狀況、收入和負債，看哪裡真的沒接住。缺口不存在的話，我會直接說不用買。</p>
-      </div>
-      <div class="card">
-        <div class="num">03</div>
-        <h3>要補再補，補多少你決定</h3>
-        <p>有缺口才進到商品討論。我會講清楚每個選項的取捨和費用，決定權在你，不催、不設期限。</p>
+      <div class="grid-3">
+        <div class="step"><span class="step-n">1</span><h3>先看你現在有什麼</h3><p>把手上的保單攤開，整理成一張看得懂的表：保什麼、保多少、保到幾歲、一年多少錢。很多人做到這步就發現問題了。</p></div>
+        <div class="step"><span class="step-n">2</span><h3>找缺口，不是找商品</h3><p>對照你的家庭狀況、收入和負債，看哪裡真的沒接住。缺口不存在的話，我會直接說不用買。</p></div>
+        <div class="step"><span class="step-n">3</span><h3>要補再補，補多少你決定</h3><p>有缺口才進到商品討論。我會講清楚每個選項的取捨和費用，決定權在你，不催、不設期限。</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ③ 文章 -->
+  <!-- ③ 文章＋延伸閱讀 -->
   {posts.length > 0 && (
-    <section class="wrap posts">
-      <p class="zone-label">文章</p>
-      <h2>寫給正在整理保單的你</h2>
-      {posts.map((p) => (
-        <a href={`/posts/${p.id}/`}>
-          <div>{p.data.title}</div>
-          <div class="date">{fmt(p.data.pubDate)}</div>
-        </a>
-      ))}
+    <section class="tint">
+      <div class="wrap-wide split">
+        <div class="split-side">
+          <p class="eyebrow">文章</p>
+          <h2 class="h2-big">寫給正在整理保單的你</h2>
+          {NOTES_LINKS.length > 0 && (
+            <>
+              <p>想先建立觀念，也可以從我的學習筆記開始，純觀念討論、不涉及商品。</p>
+              {NOTES_LINKS.map((n) => (
+                <a class="notes-link" href={n.url}>{n.title} →</a>
+              ))}
+            </>
+          )}
+        </div>
+        <div class="post-grid">
+          {posts.map((p) => (
+            <a class="post-card" href={`/posts/${p.id}/`}>
+              <span class="date">{fmt(p.data.pubDate)}</span>
+              <h3>{p.data.title}</h3>
+              <span class="read">閱讀 →</span>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   )}
 
-  <!-- ④ 延伸閱讀：單向連到 grow Notes -->
-  {NOTES_LINKS.length > 0 && (
-    <section class="wrap">
-      <p class="zone-label">延伸閱讀</p>
-      <h2>我的學習筆記</h2>
-      <p class="zone-intro">
-        這些是我在另一個網站上的個人學習紀錄，純觀念討論、不涉及商品。想先建立觀念可以從這裡開始。
-      </p>
-      <ul class="pill-list">
-        {NOTES_LINKS.map((n) => (
-          <li><a href={n.url} style="color:var(--brand-dark);text-decoration:none;">{n.title} →</a></li>
-        ))}
-      </ul>
-    </section>
-  )}
-
-  <!-- ⑤ CTA -->
-  <section class="wrap">
-    <div class="cta">
-      <h2>想先把保單看清楚？</h2>
-      <p>第一次整理不收費，也不需要決定任何事。<br />把保單拍照傳給我，我先幫你排成一張表。</p>
-      <a class="btn btn-line" href={LINE_URL}>加 LINE 預約整理</a>
-      <p style="margin-top:16px;font-size:.9rem;">
-        或寫信：<a href={`mailto:${EMAIL}`} style="color:var(--brand-dark);">{EMAIL}</a>
-        ・ 確認身分：<a href={HUB_URL} style="color:var(--muted);">tedshen.link</a>
-      </p>
+  <!-- ④ CTA -->
+  <section>
+    <div class="wrap-wide">
+      <div class="cta-navy">
+        <div>
+          <h2>想先把保單看清楚？</h2>
+          <p>第一次整理不收費，也不需要決定任何事。把保單拍照傳給我，我先幫你排成一張表。</p>
+          <p class="cta-sub">或寫信：<a href={`mailto:${EMAIL}`}>{EMAIL}</a> ・ 確認身分：<a href={HUB_URL}>tedshen.link</a></p>
+        </div>
+        <a class="btn btn-line" href={LINE_URL}>加 LINE 預約整理 →</a>
+      </div>
     </div>
   </section>
 
-  <!-- ⑥ 法定揭露 -->
+  <!-- ⑤ 法定揭露 -->
   <Disclosure />
 
-  <!-- ⑦ 官方管道與防冒用 -->
+  <!-- ⑥ 官方管道與防冒用 -->
   <OfficialChannels />
 </Base>
+
+<style>
+  section { padding: 88px 0; }
+  .qual-bar { background: #16325c; color: #dbe6f5; font-size: .82rem; padding: 8px 0; }
+  .top-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; padding-bottom: 16px; }
+  .top-brand { color: var(--brand-dark); font-weight: 900; font-size: 1.15rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  .top-nav ul { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+  .top-nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: .95rem; }
+  .top-nav a:hover { color: var(--brand-dark); }
+  .top-nav a.nav-line { background: var(--line); color: #052e16; padding: 10px 18px; border-radius: 999px; display: inline-flex; min-height: 44px; align-items: center; }
+
+  .hero-band { background: var(--surface); border-top: 1px solid var(--border); }
+  .hero2 { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; padding-top: 72px; padding-bottom: 88px; }
+  .hero2-text { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+  .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .12em; font-size: .88rem; margin-bottom: 8px; }
+  .hero2 .eyebrow { margin-bottom: 0; }
+  .hero2 h1 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.2; font-weight: 900; color: var(--brand-dark); }
+  .hero2-lead { font-size: 1.12rem; line-height: 1.9; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn-line { color: #052e16; }
+  .btn-ghost { color: var(--brand-dark); border-color: #b9c6d8; background: var(--bg); }
+
+  .table-card { flex: 1 1 440px; min-width: 0; background: var(--bg); border: 1px solid var(--border); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 12px 32px rgba(22, 50, 92, .08); }
+  .table-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+  .table-head strong { color: var(--brand-dark); }
+  .table-head span { font-size: .78rem; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
+  .table-scroll { overflow-x: auto; }
+  .table-card table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 360px; }
+  .table-card th { text-align: left; font-weight: 500; color: var(--muted); padding: 10px 8px; border-bottom: 1px solid var(--border); }
+  .table-card td { padding: 12px 8px; border-bottom: 1px solid var(--border); color: var(--text); }
+  .table-card tr.gap { background: #fff4ed; }
+  .table-card tr.gap td { color: #9a3412; border-bottom: 0; }
+  .table-card tr.gap td:first-child { font-weight: 700; }
+  .table-note { font-size: .85rem; }
+
+  .center-head { text-align: center; margin-bottom: 40px; }
+  .h2-big { font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 900; color: var(--brand-dark); line-height: 1.35; margin-bottom: 0; }
+  .step { border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 12px; }
+  .step-n { width: 44px; height: 44px; border-radius: 50%; background: #16325c; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; }
+  .step h3 { font-size: 1.2rem; color: var(--brand-dark); }
+
+  .tint { background: var(--surface); }
+  .split { display: flex; flex-wrap: wrap; gap: 48px; }
+  .split-side { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  .notes-link { color: var(--brand); font-weight: 700; text-decoration: none; }
+  .post-grid { flex: 2 1 520px; min-width: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+  .post-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: var(--text); transition: transform .15s ease; }
+  .post-card:hover { transform: translateY(-2px); }
+  .post-card .date { color: var(--muted); font-size: .85rem; }
+  .post-card h3 { font-size: 1.1rem; line-height: 1.6; }
+  .post-card .read { color: var(--brand); font-weight: 700; font-size: .9rem; margin-top: auto; }
+
+  .cta-navy { background: #16325c; color: #fff; border-radius: 24px; padding: 56px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; }
+  .cta-navy > div { flex: 1 1 420px; min-width: 0; }
+  .cta-navy h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); margin-bottom: 10px; }
+  .cta-navy p { color: #c9d6ea; }
+  .cta-navy .cta-sub { margin-top: 12px; font-size: .9rem; }
+  .cta-navy a:not(.btn) { color: #fff; }
+
+  @media (prefers-color-scheme: dark) {
+    .hero2 h1, .h2-big, .step h3, .top-brand, .table-head strong { color: var(--text); }
+    .table-card tr.gap { background: #3a1d0f; }
+    .table-card tr.gap td { color: #fdba74; }
+  }
+  @media (max-width: 560px) {
+    section { padding: 64px 0; }
+    .hero2 { padding-top: 40px; gap: 40px; }
+    .cta-navy { padding: 40px 24px; }
+  }
+</style>
