@@ -62,6 +62,9 @@ const personSchema = {
           <a class="btn btn-ghost" href="#how">看怎麼進行</a>
         </div>
       </div>
+      <div class="visual">
+        <div class="photo"><img src="/img/review-documents.webp" alt="桌上攤開的文件，兩個人的手一起看、一人正在簽名" width="1400" height="934" fetchpriority="high" /></div>
+        <p class="credit">攝影：Gabrielle Henderson／Unsplash</p>
       <div class="table-card">
         <div class="table-head"><strong>保單整理表</strong><span>範例，非真實客戶</span></div>
         <div class="table-scroll">
@@ -76,6 +79,7 @@ const personSchema = {
           </table>
         </div>
         <p class="table-note">把保單拍照傳來，第一次整理不收費，也不需要決定任何事。</p>
+      </div>
       </div>
     </header>
   </div>
@@ -114,15 +118,19 @@ const personSchema = {
 
   <!-- ② 我怎麼做 -->
   <section id="how">
-    <div class="wrap-wide">
-      <div class="center-head">
+    <div class="wrap-wide how-grid">
+      <figure class="how-photo">
+        <img src="/img/walk-together.webp" alt="大人牽著小孩在海邊散步的背影" width="1200" height="800" loading="lazy" />
+        <figcaption>攝影：Szilvia Basso／Unsplash</figcaption>
+      </figure>
+      <div>
         <p class="eyebrow">我怎麼做</p>
         <h2 class="h2-big">三步，每一步都可以停</h2>
-      </div>
-      <div class="grid-3">
-        <div class="step"><span class="step-n">1</span><h3>先看你現在有什麼</h3><p>把手上的保單攤開，整理成一張看得懂的表：保什麼、保多少、保到幾歲、一年多少錢。很多人做到這步就發現問題了。</p></div>
-        <div class="step"><span class="step-n">2</span><h3>找缺口，不是找商品</h3><p>對照你的家庭狀況、收入和負債，看哪裡真的沒接住。缺口不存在的話，我會直接說不用買。</p></div>
-        <div class="step"><span class="step-n">3</span><h3>要補再補，補多少你決定</h3><p>有缺口才進到商品討論。我會講清楚每個選項的取捨和費用，決定權在你，不催、不設期限。</p></div>
+        <div class="steps">
+          <div class="step"><span class="step-n">1</span><div><h3>先看你現在有什麼</h3><p>把手上的保單攤開，整理成一張看得懂的表：保什麼、保多少、保到幾歲、一年多少錢。很多人做到這步就發現問題了。</p></div></div>
+          <div class="step"><span class="step-n">2</span><div><h3>找缺口，不是找商品</h3><p>對照你的家庭狀況、收入和負債，看哪裡真的沒接住。缺口不存在的話，我會直接說不用買。</p></div></div>
+          <div class="step"><span class="step-n">3</span><div><h3>要補再補，補多少你決定</h3><p>有缺口才進到商品討論。我會講清楚每個選項的取捨和費用，決定權在你，不催、不設期限。</p></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -160,6 +168,7 @@ const personSchema = {
   <section>
     <div class="wrap-wide">
       <div class="cta-navy">
+        <img class="cta-bg" src="/img/dining-table.webp" alt="" width="1600" height="1067" loading="lazy" />
         <div>
           <h2>想先把保單看清楚？</h2>
           <p>第一次整理不收費，也不需要決定任何事。把保單拍照傳給我，我先幫你排成一張表。</p>
@@ -178,78 +187,83 @@ const personSchema = {
 </Base>
 
 <style>
-  section { padding: 88px 0; }
-  .qual-bar { background: #16325c; color: #dbe6f5; font-size: .82rem; padding: 8px 0; }
-  .top-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; padding-bottom: 16px; }
-  .top-brand { color: var(--brand-dark); font-weight: 900; font-size: 1.15rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+  section { padding: 96px 0; }
+  .qual-bar { background: var(--surface); color: var(--muted); font-size: .8rem; padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .top-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px; padding-bottom: 18px; }
+  .top-brand { color: var(--brand-dark); font-weight: 900; font-size: 1.1rem; text-decoration: none; display: flex; align-items: center; gap: 10px; }
   .top-nav ul { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
-  .top-nav a { color: var(--muted); text-decoration: none; font-weight: 600; font-size: .95rem; }
+  .top-nav a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .94rem; }
   .top-nav a:hover { color: var(--brand-dark); }
-  .top-nav a.nav-line { background: var(--line); color: #052e16; padding: 10px 18px; border-radius: 999px; display: inline-flex; min-height: 44px; align-items: center; }
-
-  .hero-band { background: var(--surface); border-top: 1px solid var(--border); }
-  .hero2 { display: flex; flex-wrap: wrap; align-items: center; gap: 56px; padding-top: 72px; padding-bottom: 88px; }
-  .hero2-text { flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
-  .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .12em; font-size: .88rem; margin-bottom: 8px; }
+  .top-nav a.nav-line { background: var(--line); color: #04260F; font-weight: 700; padding: 10px 18px; border-radius: 999px; display: inline-flex; min-height: 44px; align-items: center; }
+  .hero-band { background: var(--bg); }
+  .hero2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center; padding-top: 48px; padding-bottom: 96px; }
+  .hero2-text { min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+  .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .16em; font-size: .82rem; margin-bottom: 8px; }
   .hero2 .eyebrow { margin-bottom: 0; }
-  .hero2 h1 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.2; font-weight: 900; color: var(--brand-dark); }
-  .hero2-lead { font-size: 1.12rem; line-height: 1.9; }
+  .hero2 h1 { font-family: var(--f-head); font-size: clamp(2.6rem, 5.4vw, 4.2rem); line-height: 1.2; font-weight: 700; color: var(--brand-dark); }
+  .hero2-lead { font-size: 1.1rem; line-height: 1.9; max-width: 30rem; }
   .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn-line { color: #052e16; }
-  .btn-ghost { color: var(--brand-dark); border-color: #b9c6d8; background: var(--bg); }
-
-  .table-card { flex: 1 1 440px; min-width: 0; background: var(--bg); border: 1px solid var(--border); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 12px 32px rgba(22, 50, 92, .08); }
+  .visual { position: relative; padding-bottom: 72px; min-width: 0; }
+  .visual .photo { border-radius: 20px; overflow: hidden; aspect-ratio: 5 / 4; max-width: 100%; }
+  .visual .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .credit { font-size: .7rem; color: var(--muted); margin-top: 6px; text-align: right; }
+  .table-card { position: absolute; left: -40px; bottom: 0; width: min(88%, 440px); background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 22px 50px rgba(30, 58, 99, .14); }
   .table-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
   .table-head strong { color: var(--brand-dark); }
-  .table-head span { font-size: .78rem; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 4px 10px; }
+  .table-head span { font-size: .72rem; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 2px 9px; }
   .table-scroll { overflow-x: auto; }
-  .table-card table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 360px; }
-  .table-card th { text-align: left; font-weight: 500; color: var(--muted); padding: 10px 8px; border-bottom: 1px solid var(--border); }
-  .table-card td { padding: 12px 8px; border-bottom: 1px solid var(--border); color: var(--text); }
-  .table-card tr.gap { background: #fff4ed; }
-  .table-card tr.gap td { color: #9a3412; border-bottom: 0; }
+  .table-card table { width: 100%; border-collapse: collapse; font-size: .84rem; min-width: 320px; }
+  .table-card th { text-align: left; font-weight: 500; color: var(--muted); padding: 7px 6px; border-bottom: 1px solid var(--border); }
+  .table-card td { padding: 8px 6px; border-bottom: 1px solid var(--border); color: var(--text); }
+  .table-card tr.gap td { background: #FBEDE6; color: var(--accent); border-bottom: 0; }
   .table-card tr.gap td:first-child { font-weight: 700; }
-  .table-note { font-size: .85rem; }
-
-  .pain { padding-top: 72px; padding-bottom: 24px; }
-  .pain-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--text); transition: transform .15s ease, box-shadow .15s ease; }
-  .pain-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-  .pain-card h3 { font-size: 1.1rem; line-height: 1.6; color: var(--brand-dark); }
-  .pain-tag { align-self: flex-start; font-size: .78rem; font-weight: 700; color: var(--accent); background: #fff4ed; border-radius: 999px; padding: 3px 10px; }
-  .pain-go { color: var(--brand); font-weight: 700; font-size: .9rem; margin-top: auto; }
-  .center-head { text-align: center; margin-bottom: 40px; }
-  .h2-big { font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 900; color: var(--brand-dark); line-height: 1.35; margin-bottom: 0; }
-  .step { border: 1px solid var(--border); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 12px; }
-  .step-n { width: 44px; height: 44px; border-radius: 50%; background: #16325c; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 900; }
-  .step h3 { font-size: 1.2rem; color: var(--brand-dark); }
-
+  .table-note { font-size: .82rem; }
+  .pain { background: var(--surface); padding-top: 96px; padding-bottom: 96px; }
+  .pain-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--text); transition: transform .2s ease, border-color .2s ease; }
+  .pain-card:hover { transform: translateY(-2px); border-color: var(--brand-dark); }
+  .pain-card h3 { font-size: 1.08rem; line-height: 1.6; color: var(--text); }
+  .pain-tag { align-self: flex-start; font-size: .75rem; font-weight: 700; color: var(--accent); background: #FBEDE6; border-radius: 999px; padding: 2px 10px; }
+  .pain-go { color: var(--brand-dark); font-weight: 700; font-size: .9rem; margin-top: auto; }
+  .center-head { text-align: center; margin-bottom: 44px; }
+  .h2-big { font-family: var(--f-head); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; color: var(--brand-dark); line-height: 1.35; margin-bottom: 0; }
+  .how-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 56px; align-items: center; }
+  .how-photo { margin: 0; display: grid; gap: 6px; }
+  .how-photo img { width: 100%; height: auto; border-radius: 20px; display: block; aspect-ratio: 4 / 5; object-fit: cover; }
+  .how-photo figcaption { font-size: .7rem; color: var(--muted); }
+  .steps { display: grid; margin-top: 26px; }
+  .step { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 18px; padding: 22px 0; border-top: 1px solid var(--border); }
+  .step:last-child { border-bottom: 1px solid var(--border); }
+  .step-n { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--brand-dark); color: var(--brand-dark); display: flex; align-items: center; justify-content: center; font-weight: 900; }
+  .step h3 { font-size: 1.15rem; color: var(--brand-dark); }
+  .step p { margin-top: 4px; }
   .tint { background: var(--surface); }
   .split { display: flex; flex-wrap: wrap; gap: 48px; }
   .split-side { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
-  .notes-link { color: var(--brand); font-weight: 700; text-decoration: none; }
-  .post-grid { flex: 2 1 520px; min-width: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
-  .post-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: var(--text); transition: transform .15s ease; }
-  .post-card:hover { transform: translateY(-2px); }
+  .notes-link { color: var(--brand-dark); font-weight: 700; text-decoration: none; }
+  .post-grid { flex: 2 1 520px; min-width: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+  .post-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: var(--text); transition: border-color .2s ease; }
+  .post-card:hover { border-color: var(--brand-dark); }
   .post-card .date { color: var(--muted); font-size: .85rem; }
-  .post-card h3 { font-size: 1.1rem; line-height: 1.6; }
-  .post-card .read { color: var(--brand); font-weight: 700; font-size: .9rem; margin-top: auto; }
-
-  .cta-navy { background: #16325c; color: #fff; border-radius: 24px; padding: 56px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; }
+  .post-card h3 { font-size: 1.08rem; line-height: 1.6; }
+  .post-card .read { color: var(--brand-dark); font-weight: 700; font-size: .9rem; margin-top: auto; }
+  .cta-navy { position: relative; overflow: hidden; background: var(--brand-dark); color: #fff; border-radius: 24px; padding: 64px 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; }
+  .cta-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .3; max-width: none; }
+  .cta-navy > div, .cta-navy > a { position: relative; }
   .cta-navy > div { flex: 1 1 420px; min-width: 0; }
-  .cta-navy h2 { font-size: clamp(1.6rem, 2.8vw, 2.4rem); margin-bottom: 10px; }
-  .cta-navy p { color: #c9d6ea; }
+  .cta-navy h2 { font-family: var(--f-head); font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 10px; }
+  .cta-navy p { color: #dfe7f2; }
   .cta-navy .cta-sub { margin-top: 12px; font-size: .9rem; }
   .cta-navy a:not(.btn) { color: #fff; }
-
-  @media (prefers-color-scheme: dark) {
-    .hero2 h1, .h2-big, .step h3, .top-brand, .table-head strong, .pain-card h3 { color: var(--text); }
-    .pain-tag { background: #3a1d0f; color: #fdba74; }
-    .table-card tr.gap { background: #3a1d0f; }
-    .table-card tr.gap td { color: #fdba74; }
+  @media (max-width: 900px) {
+    .hero2, .how-grid { grid-template-columns: minmax(0, 1fr); }
+    .table-card { left: 16px; }
   }
-  @media (max-width: 560px) {
-    section { padding: 64px 0; }
-    .hero2 { padding-top: 40px; gap: 40px; }
-    .cta-navy { padding: 40px 24px; }
+  @media (max-width: 640px) {
+    section, .pain { padding: 72px 0; }
+    .hero2 { padding-top: 32px; gap: 36px; }
+    .top-nav ul li:not(:last-child) { display: none; }
+    .visual { padding-bottom: 0; }
+    .table-card { position: relative; left: 0; width: 100%; margin-top: -56px; }
+    .cta-navy { padding: 44px 24px; }
   }
 </style>
