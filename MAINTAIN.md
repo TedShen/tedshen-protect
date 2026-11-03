@@ -38,7 +38,7 @@
 - **框架**：Astro `^7.2.10`，Node `>=22.12.0`，`@astrojs/sitemap`。
 - **設定**：`astro.config.mjs` — `site: https://protect.tedshen.link`，`trailingSlash: 'always'`（canonical、sitemap、站內連結統一尾斜線）。
 - **部署**：`.github/workflows/deploy.yml` — push 到 `main` 即 build + 部署到 GitHub Pages（`withastro/action@v3`）。
-- **靜態資源**：`public/` — `CNAME`、`avatar.jpg`（原圖，schema 用）、`avatar-192.jpg`（首頁 Hero 用，6KB）、`og.jpg`（1200×630 分享預覽圖）、`favicon.ico/.svg`、`llms.txt`（給 AI 引用本站時的說明）。
+- **靜態資源**：`public/img/` — 首頁照片（Unsplash License，頁面與頁尾已標註攝影師；保險站只用不露臉的照片）。`public/` — `CNAME`、`avatar.jpg`（原圖，schema 用）、`avatar-192.jpg`（首頁 Hero 用，6KB）、`og.jpg`（1200×630 分享預覽圖）、`favicon.ico/.svg`、`llms.txt`（給 AI 引用本站時的說明）。
 - **RSS**：`src/pages/rss.xml.ts`（`@astrojs/rss`，只收非 draft 文章），各頁 `<head>` 有 `alternate` 連結。
 
 ### 本機預覽
@@ -122,6 +122,7 @@ src/
 
 | 日期 | 作業內容 | 影響範圍 | 狀態 / 備註 |
 |---|---|---|---|
+| 2026-11-03 | 首頁改版為淺色專業風：Noto 字體、明體標題、首屏簽文件照片＋保單整理表疊放、三步旁配父子背影照、CTA 以餐桌照為底；全站色票改淺色固定（拿掉從 grow 複製來、顏色錯用的深色模式）。文案、揭露、官方管道內容皆未更動 | `Base.astro`、`index.astro`、`public/img/` | 已完成。照片來自 Unsplash（Gabrielle Henderson、Szilvia Basso、Minha Baek），只選不露臉的畫面；三站從此各自不同風格 |
 | 2026-09-15 | 初版上線：保險服務站（未公開審閱版） | 全站 | 已完成（commit `35a6547` 起）|
 | 2026-09-15 | 加入審閱模式：noindex、橫幅、無 sitemap、robots 全擋 | `astro.config.mjs`、`Base.astro`、`robots.txt.ts`、`deploy.yml` | 已完成（`ab365a0`）|
 | 2026-09-15 | 官方管道換成保險線專用帳號 | `src/consts.ts`、`OfficialChannels.astro` | 已完成（`4d7c051`）|
