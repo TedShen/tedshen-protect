@@ -2,7 +2,7 @@
 
 沈裕德 Ted 的保險服務站。以「登錄保險業務員」身分的正式管道，和 grow 的個人學習筆記分開。
 
-狀態：**正式上線**（2026-09-15）。公司確認不放 logo 就不需送審。登錄字號目前選擇不公開，`DISCLOSURE.registrationNo` 留空即可。
+狀態：**正式上線**（2026-09-15）。公司確認不放 logo 就不需送審。揭露區塊依正遠配合律師 2026-11-05 建議，顯示真實姓名、所屬公司與金管會查詢連結；登錄字號已填入 `DISCLOSURE.registrationNo`（2026-11-05 起公開）。
 
 需要暫時下架成審閱版時，在 `.github/workflows/deploy.yml` 的 build 步驟加回 `env: PROTECT_PREVIEW: '1'`：全站 noindex、robots 全擋、不產 sitemap、頂端有橫幅。
 

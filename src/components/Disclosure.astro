@@ -1,15 +1,18 @@
 ---
 // 法定揭露區塊。每一頁都放，位置在頁尾 CTA 之後、footer 之前。
-// 文字內容全部來自 consts.ts 的 DISCLOSURE，這裡不寫死任何一個字。
-import { DISCLOSURE } from '../consts';
+// 資料全部來自 consts.ts 的 DISCLOSURE 與 PERSON。
+// 依《保險業務員管理規則》第 16 條與正遠配合律師 2026-11-05 建議：標明所屬公司名稱，並揭露真實姓名與登錄字號。
+import { DISCLOSURE, PERSON } from '../consts';
 ---
 
 <section class="wrap-wide" aria-label="法定揭露">
   <div class="compliance-note" style="font-size:.85rem; line-height:1.8;">
     <p style="color:var(--text); font-weight:600; margin-bottom:6px;">業務員登錄資料</p>
+    <p>業務員：{PERSON.name}（{PERSON.alternateName}），{PERSON.jobTitle}</p>
+    <p>所屬公司：{DISCLOSURE.companyName}</p>
     {DISCLOSURE.registrationNo && <p>登錄字號：{DISCLOSURE.registrationNo}</p>}
     {DISCLOSURE.qualifications?.length > 0 && <p>登錄資格：{DISCLOSURE.qualifications.join('、')}</p>}
-    <p>查證：業務員登錄資料可向登錄公司查詢。</p>
+    <p>身分查驗：可至 <a href={DISCLOSURE.verifyUrl} target="_blank" rel="noopener">{DISCLOSURE.verifyLabel}</a> 驗證，或向所屬公司查詢。</p>
     {DISCLOSURE.reviewNo && <p>審核編號：{DISCLOSURE.reviewNo}</p>}
     <p style="margin-top:10px;">{DISCLOSURE.statement}</p>
   </div>

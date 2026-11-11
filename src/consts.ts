@@ -29,14 +29,17 @@ export const PERSON = {
 
 // ── 揭露資料 ─────────────────────────────────────────────
 // 公司確認：不放公司 logo 就不需送審，只寫登錄資訊即可（2026-09-15）。
-// registrationNo 是選填：Ted 目前選擇不公開，之後要放再填。
+// registrationNo：2026-11-05 起公開。
 export const DISCLOSURE = {
   companyName: '正遠保險經紀人股份有限公司',
-  registrationNo: '', // 選填，目前不公開
+  registrationNo: '0107103998', // 2026-11-05 依正遠配合律師建議公開（格式參考保險克勞斯）
   // 已取得的登錄資格
   qualifications: ['人身保險', '財產保險', '投資型保險商品', '外幣收付非投資型保險商品'],
   statement: '本網站由個人製作與維護，內容為保險觀念說明與服務介紹，非公司官方網站。保險商品內容以各保險公司保單條款為準。',
   reviewNo: '', // 若公司有審核編號，填這裡；沒有就留空
+  // 身分查驗連結（金管會保險業務員資訊公開查詢系統）。參考保險克勞斯 clause.tw 的揭露方式。
+  verifyUrl: 'https://ins-info.ib.gov.tw/customer/Sales01.aspx',
+  verifyLabel: '金管會保險業務員資訊公開查詢系統',
 };
 
 // grow Notes 的保險學習筆記。這裡是單向連結：保險站連過去，Notes 不連回來。
