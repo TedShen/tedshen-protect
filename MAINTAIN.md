@@ -135,6 +135,7 @@ src/
 | 2026-10-06 | 新增〈食品業者一定要保產品責任險嗎？〉草稿（draft: true），內容依食安法第 13、47 條及衛福部 110-09-28 公告（衛授食字第 1101302156 號）全文核對；本機 build 驗證通過 | `src/content/posts/food-product-liability-insurance.md`（新增） | 草稿，待 Ted 審稿後改 `draft: false` 發布 |
 | 2026-10-06 | 〈食品業者一定要保產品責任險嗎？〉Ted 審稿通過，改 draft: false 發布 | `src/content/posts/food-product-liability-insurance.md` | 已發布 |
 | 2026-11-02 | 〈食品業者一定要保產品責任險嗎？〉新增一節「來問我的業者，最常不清楚的兩件事」（身體傷害與財物損失分開計額、保費需核保報價），素材來自 Ted 的回答；加 updatedDate | `src/content/posts/food-product-liability-insurance.md` | 已發布 |
+| 2026-11-12 | 新增〈員工個資外洩，公司要負什麼責任？〉：Ted 提供媒體報導當素材（只改寫為一段背景、不點名公司）；個資法現行第 12、27、28、29、48、50 條依全國法規資料庫與個資會籌備處對照表「現行條文」欄核對，114-11-11 修正條文施行日期未定、通知時限未定案不寫數字；資安保險三類依金管會 2026-04-02、保險局 2025-09-18 新聞稿；無保費數字。預期 1～3 個月被索引並有曝光，2026-12-10 驗收 | `src/content/posts/employee-data-breach-liability.md`（新增） | 已發布 |
 | <!-- 之後新增列請插在這一行之上 --> | | | |
 
 **紀錄格式**：`| YYYY-MM-DD | 做了什麼（一句話） | 改了哪些檔案 | 狀態 |`。commit hash 有的話附上。
