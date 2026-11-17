@@ -120,6 +120,8 @@ draft: false
 
 法定金額是**最低**標準，不是夠用的標準。場所人多、設備多、有電梯或供餐，實際要保多少，要依你的場所條件請保險公司核保報價，這裡沒辦法給一個通用的保費數字。
 
+公共意外責任險保的是來店的客人等第三人；員工在工作中受傷，要看的是職災保險和雇主責任，見〈[雇主意外責任險和職災保險差在哪？](/posts/employer-liability-vs-occupational-accident-insurance/)〉。
+
 ## 資料來源
 
 - [全國法規資料庫：發展觀光條例（第 31、57 條）](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=K0110001)
