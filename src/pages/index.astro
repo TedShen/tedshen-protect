@@ -22,6 +22,8 @@ const personSchema = {
   image: new URL(PERSON.image, SITE_URL).href,
   url: SITE_URL,
   worksFor: { '@type': 'Organization', name: DISCLOSURE.companyName },
+  // 取自首頁資格列與服務說明，不要寫網站上沒有的東西
+  knowsAbout: ['保單健檢', '保障缺口分析', '人身保險', '財產保險', '投資型保險', '外幣保單'],
 };
 ---
 

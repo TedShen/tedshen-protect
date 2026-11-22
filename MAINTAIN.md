@@ -122,6 +122,7 @@ src/
 
 | 日期 | 作業內容 | 影響範圍 | 狀態 / 備註 |
 |---|---|---|---|
+| 2026-11-22 | 學 houseguide.ai 的技術做法：首頁 Person 加 knowsAbout（取自首頁資格列與服務說明）；sitemap 每頁加 lastmod（文章取 updatedDate／pubDate，首頁與列表取最新一篇，不用建置時間）；新增 `/version.json`（commit 編號與建置時間）。`public/llms.txt` 原本就有，未改 | `index.astro`、`astro.config.mjs`、`src/pages/version.json.ts` | 已完成（作業人：AI 助手，Ted 11/22 要求）。`npm run build` 通過，sitemap 7 頁都有 lastmod |
 | 2026-11-19 | 新增 `public/ig/`：IG 自動發文用的文字圖卡（1080×1350，由 TedShen/threads-autopilot 的 `scripts/render-ig-cards.mjs` 產生，檔名含內容雜湊）。IG API 要求圖片放在公開網址，所以放在本站；不進 sitemap、站內沒有連結。robots 刻意不擋 /ig/（怕 Meta 抓圖時被擋）。圖卡不放公司 logo、不寫保費，貼文揭露「我是保險業務員」，只有 Ted 在 GitHub Issue 核准的稿才會發 | `public/ig/`（新增） | 已完成（作業人：AI 助手，Ted 11/19 要求串 protect 的 Threads 與 IG） |
 | 2026-11-03 | 首頁改版為淺色專業風：Noto 字體、明體標題、首屏簽文件照片＋保單整理表疊放、三步旁配父子背影照、CTA 以餐桌照為底；全站色票改淺色固定（拿掉從 grow 複製來、顏色錯用的深色模式）。文案、揭露、官方管道內容皆未更動 | `Base.astro`、`index.astro`、`public/img/` | 已完成。照片來自 Unsplash（Gabrielle Henderson、Szilvia Basso、Minha Baek），只選不露臉的畫面；三站從此各自不同風格 |
 | 2026-09-15 | 初版上線：保險服務站（未公開審閱版） | 全站 | 已完成（commit `35a6547` 起）|

@@ -2,6 +2,18 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { DISCLOSURE } from './src/consts';
+import { readdirSync, readFileSync } from 'node:fs';
+
+// sitemap 的 lastmod：文章取 frontmatter 的 updatedDate，沒有就取 pubDate；首頁與文章列表取全站最新一篇。
+// 只用真實的更新日期，不用建置時間（建置時間每次都變，搜尋引擎會不再信任 lastmod）。
+const postDates = {};
+for (const f of readdirSync('./src/content/posts').filter((n) => n.endsWith('.md'))) {
+  const fm = readFileSync(`./src/content/posts/${f}`, 'utf8').split('---')[1] || '';
+  const pick = (k) => (fm.match(new RegExp(`^${k}:\\s*['"]?([0-9-]+)`, 'm')) || [])[1];
+  const d = pick('updatedDate') || pick('pubDate');
+  if (d && !/^draft:\s*true/m.test(fm)) postDates[f.replace(/\.md$/, '')] = d;
+}
+const latest = Object.values(postDates).sort().pop();
 
 // 審閱模式（PROTECT_PREVIEW=1）：給公司的人看用。全站 noindex、robots 全擋、不產 sitemap、頂端有橫幅、允許佔位符。
 // 正式上線：把 .github/workflows/deploy.yml 裡的 PROTECT_PREVIEW 拿掉。
@@ -20,7 +32,18 @@ if (placeholders.length > 0 && !process.env.PROTECT_ALLOW_PLACEHOLDER && !PREVIE
 // https://astro.build/config
 export default defineConfig({
   site: 'https://protect.tedshen.link',
-  integrations: PREVIEW ? [] : [sitemap()],
+  integrations: PREVIEW
+    ? []
+    : [
+        sitemap({
+          serialize(item) {
+            const m = item.url.match(/\/posts\/([^/]+)\/$/);
+            const d = m ? postDates[m[1]] : /\/(posts\/)?$/.test(new URL(item.url).pathname) ? latest : undefined;
+            if (d) item.lastmod = new Date(d).toISOString();
+            return item;
+          },
+        }),
+      ],
   // GitHub Pages 實際服務的是 /path/，統一尾斜線讓 canonical、sitemap、站內連結一致
   trailingSlash: 'always',
 });
