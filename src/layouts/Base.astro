@@ -1,5 +1,5 @@
 ---
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, PERSON, EMAIL } from '../consts';
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, PERSON, EMAIL, CLOUDFLARE_BEACON_TOKEN } from '../consts';
 
 interface Props {
   title?: string;
@@ -72,6 +72,9 @@ const schemas = [
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href="/rss.xml" />    {PREVIEW && <meta name="robots" content="noindex, nofollow" />}
     <link rel="sitemap" href="/sitemap-index.xml" />
+    {CLOUDFLARE_BEACON_TOKEN && !PREVIEW && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: CLOUDFLARE_BEACON_TOKEN })}></script>
+    )}
 
     <!-- Open Graph：分享到 LINE / FB 時的預覽 -->
     <meta property="og:title" content={ogTitle ?? title} />

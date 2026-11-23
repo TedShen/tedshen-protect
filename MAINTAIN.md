@@ -122,6 +122,7 @@ src/
 
 | 日期 | 作業內容 | 影響範圍 | 狀態 / 備註 |
 |---|---|---|---|
+| 2026-11-23 | 接上 Cloudflare Web Analytics：`consts.ts` 加 `CLOUDFLARE_BEACON_TOKEN`（Cloudflare 後台新增網站 protect.tedshen.link 取得），`Base.astro` 在 head 載入 beacon（審閱模式不載入；做法同 grow）。不用 cookie、不做跨站追蹤，用來看每頁來訪數與來源 | `src/consts.ts`、`src/layouts/Base.astro` | 已完成（作業人：AI 助手，Ted 11/23 要求）。`npm run build` 通過，部署後首頁 HTML 有 beacon |
 | 2026-11-23 | 安全性更新：astro 7.3.2 → 7.4.7＋`npm audit fix`（devalue、sharp、vite、zod 等間接相依），npm audit 由 high 6／moderate 2／low 1 變 0。都只在建置時用到，線上仍是純靜態 HTML。另把 §3 的登錄字號說明改成「公開」，和 `consts.ts` 現況一致 | `package.json`、`package-lock.json`、`MAINTAIN.md` | 已完成（作業人：AI 助手，Ted 11/23 同意升級並確認登錄字號以公開為準）。`npm run build` 通過，部署後線上文章頁正常 |
 | 2026-11-22 | 學 houseguide.ai 的技術做法：首頁 Person 加 knowsAbout（取自首頁資格列與服務說明）；sitemap 每頁加 lastmod（文章取 updatedDate／pubDate，首頁與列表取最新一篇，不用建置時間）；新增 `/version.json`（commit 編號與建置時間）。`public/llms.txt` 原本就有，未改 | `index.astro`、`astro.config.mjs`、`src/pages/version.json.ts` | 已完成（作業人：AI 助手，Ted 11/22 要求）。`npm run build` 通過，sitemap 7 頁都有 lastmod |
 | 2026-11-19 | 新增 `public/ig/`：IG 自動發文用的文字圖卡（1080×1350，由 TedShen/threads-autopilot 的 `scripts/render-ig-cards.mjs` 產生，檔名含內容雜湊）。IG API 要求圖片放在公開網址，所以放在本站；不進 sitemap、站內沒有連結。robots 刻意不擋 /ig/（怕 Meta 抓圖時被擋）。圖卡不放公司 logo、不寫保費，貼文揭露「我是保險業務員」，只有 Ted 在 GitHub Issue 核准的稿才會發 | `public/ig/`（新增） | 已完成（作業人：AI 助手，Ted 11/19 要求串 protect 的 Threads 與 IG） |

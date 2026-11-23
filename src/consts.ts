@@ -18,6 +18,9 @@ export const LINE_URL = 'https://lin.ee/SIX75CN';
 export const THREADS_URL = 'https://www.threads.com/@tedshen.protect';
 export const INSTAGRAM_URL = 'https://www.instagram.com/tedshen.protect';
 export const EMAIL = 'ted@tedshen.link';
+// Cloudflare Web Analytics（不用 cookie、不做跨站追蹤；只看每頁來訪數與來源）。2026-11-23 Ted 要求接上。
+// protect 由 GitHub Pages 回應、不經 Cloudflare 代理，所以要手動放這段 beacon。留空就不載入。
+export const CLOUDFLARE_BEACON_TOKEN = 'e0d5b5d73d614c50ba208fe2d1b6eabe';
 
 // 站主
 export const PERSON = {
