@@ -86,7 +86,7 @@ src/
 ### `src/consts.ts` 現況（改任何聯絡方式只改這裡）
 
 - 官方管道（保險線專用，和財務教練 `@tedshen.grow` 那組不要混用）：LINE `https://lin.ee/SIX75CN`、Threads/IG `@tedshen.protect`、`ted@tedshen.link`。
-- `DISCLOSURE`：`companyName: 正遠保險經紀人股份有限公司`；`registrationNo` 選填（Ted 目前選擇不公開，留空，`Disclosure.astro` 會自動隱藏該行）；`qualifications`：人身、財產、投資型、外幣收付非投資型；`reviewNo` 留空（有審核編號再填）。
+- `DISCLOSURE`：`companyName: 正遠保險經紀人股份有限公司`；`registrationNo`：**公開**（2026-11-05 起依正遠配合律師建議公開，Ted 2026-11-23 確認以公開為準；留空時 `Disclosure.astro` 會自動隱藏該行）；`qualifications`：人身、財產、投資型、外幣收付非投資型；`reviewNo` 留空（有審核編號再填）。
 - `NOTES_LINKS`：目前 1 筆（保單健檢觀念筆記）。
 
 ---
@@ -122,6 +122,7 @@ src/
 
 | 日期 | 作業內容 | 影響範圍 | 狀態 / 備註 |
 |---|---|---|---|
+| 2026-11-23 | 安全性更新：astro 7.3.2 → 7.4.7＋`npm audit fix`（devalue、sharp、vite、zod 等間接相依），npm audit 由 high 6／moderate 2／low 1 變 0。都只在建置時用到，線上仍是純靜態 HTML。另把 §3 的登錄字號說明改成「公開」，和 `consts.ts` 現況一致 | `package.json`、`package-lock.json`、`MAINTAIN.md` | 已完成（作業人：AI 助手，Ted 11/23 同意升級並確認登錄字號以公開為準）。`npm run build` 通過，部署後線上文章頁正常 |
 | 2026-11-22 | 學 houseguide.ai 的技術做法：首頁 Person 加 knowsAbout（取自首頁資格列與服務說明）；sitemap 每頁加 lastmod（文章取 updatedDate／pubDate，首頁與列表取最新一篇，不用建置時間）；新增 `/version.json`（commit 編號與建置時間）。`public/llms.txt` 原本就有，未改 | `index.astro`、`astro.config.mjs`、`src/pages/version.json.ts` | 已完成（作業人：AI 助手，Ted 11/22 要求）。`npm run build` 通過，sitemap 7 頁都有 lastmod |
 | 2026-11-19 | 新增 `public/ig/`：IG 自動發文用的文字圖卡（1080×1350，由 TedShen/threads-autopilot 的 `scripts/render-ig-cards.mjs` 產生，檔名含內容雜湊）。IG API 要求圖片放在公開網址，所以放在本站；不進 sitemap、站內沒有連結。robots 刻意不擋 /ig/（怕 Meta 抓圖時被擋）。圖卡不放公司 logo、不寫保費，貼文揭露「我是保險業務員」，只有 Ted 在 GitHub Issue 核准的稿才會發 | `public/ig/`（新增） | 已完成（作業人：AI 助手，Ted 11/19 要求串 protect 的 Threads 與 IG） |
 | 2026-11-03 | 首頁改版為淺色專業風：Noto 字體、明體標題、首屏簽文件照片＋保單整理表疊放、三步旁配父子背影照、CTA 以餐桌照為底；全站色票改淺色固定（拿掉從 grow 複製來、顏色錯用的深色模式）。文案、揭露、官方管道內容皆未更動 | `Base.astro`、`index.astro`、`public/img/` | 已完成。照片來自 Unsplash（Gabrielle Henderson、Szilvia Basso、Minha Baek），只選不露臉的畫面；三站從此各自不同風格 |
