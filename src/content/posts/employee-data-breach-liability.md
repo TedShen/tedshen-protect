@@ -103,6 +103,11 @@ draft: false
 
 這幾件事做好，對核保也是加分。
 
+## 延伸閱讀
+
+- [雇主意外責任險和職災保險差在哪？](/posts/employer-liability-vs-occupational-accident-insurance/)：員工在工作中受傷時，公司依法要負的責任和保險怎麼分工。
+- [公共意外責任險哪些行業依法要保？](/posts/public-liability-insurance-required-industries/)：客人在店裡受傷、財物受損，是另一種責任，看你是哪一業、開在哪個縣市。
+
 ## 資料來源
 
 - [全國法規資料庫：個人資料保護法（第 2、12、27、28、29、48、50 條）](https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=I0050021)
